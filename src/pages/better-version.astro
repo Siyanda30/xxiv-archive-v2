@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Exhibition from "../components/Exhibition.astro";
+import ArtifactGallery from "../components/ArtifactGallery.astro";
+import Magazine from "../components/Magazine.astro";
+import Tracklist from "../components/Tracklist.astro";
+import FinalRoom from "../components/FinalRoom.astro";
+import ExhibitionNavigation from "../components/ExhibitionNavigation.astro";
+---
+
+<BaseLayout title="Better Version | XXIV ARCHIVE">
+
+<Exhibition
+
+archive="ARCHIVE 003"
+
+title="Better Version"
+
+year="2026"
+
+cover="/images/BETTER VERSION/cover.jpg"
+
+heading="Better Version"
+
+description="Write your artist statement for Better Version here."
+
+>
+
+<ArtifactGallery folder="BETTER VERSION" />
+
+<Magazine
+
+issue="003"
+
+status="AVAILABLE"
+
+pdf="/magazines/BETTER VERSION/magazine.pdf"
+
+/>
+
+<Tracklist
+
+title="Better Version"
+
+tracks={[
+
+"Better Version"
+
+]}
+
+/>
+
+<FinalRoom
+
+mode="released"
+
+spotify="#"
+
+apple="#"
+
+youtube="#"
+
+/>
+
+<ExhibitionNavigation
+
+previousTitle="Clouds"
+previousArchive="ARCHIVE 002"
+previousLink="/clouds"
+
+nextTitle="Outside"
+nextArchive="ARCHIVE 004"
+nextLink="/outside"
+
+/>
+
+</Exhibition>
+
+</BaseLayout>

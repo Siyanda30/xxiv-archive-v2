@@ -1,0 +1,232 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Visit | XXIV ARCHIVE">
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <p>VISIT THE ARCHIVE</p>
+
+    <h1>
+      Let's Create<br />
+      Something Meaningful.
+    </h1>
+
+    <span>
+      Collaborations, licensing, exhibitions and creative partnerships.
+    </span>
+
+  </div>
+
+</section>
+
+<section class="contact">
+
+  <div class="grid">
+
+    <div class="card">
+
+      <p class="label">EMAIL</p>
+
+      <h2>hello@xxivarchive.com</h2>
+
+      <span>General enquiries and collaborations.</span>
+
+    </div>
+
+    <div class="card">
+
+      <p class="label">INSTAGRAM</p>
+
+      <h2>@xxivarchive</h2>
+
+      <span>Follow the archive and new exhibitions.</span>
+
+    </div>
+
+    <div class="card">
+
+      <p class="label">PRESS</p>
+
+      <h2>Media Kit</h2>
+
+      <span>Available upon request.</span>
+
+    </div>
+
+    <div class="card">
+
+      <p class="label">BOOKINGS</p>
+
+      <h2>Creative Projects</h2>
+
+      <span>Music, photography, exhibitions and partnerships.</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="quote">
+
+  <blockquote>
+
+    "Every exhibition begins with a conversation."
+
+  </blockquote>
+
+</section>
+
+</BaseLayout>
+
+<style>
+
+.hero{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 8%;
+
+}
+
+.hero-content{
+
+max-width:900px;
+
+}
+
+.hero p{
+
+letter-spacing:10px;
+font-size:.8rem;
+color:#B89D68;
+
+}
+
+.hero h1{
+
+font-size:6rem;
+font-weight:300;
+line-height:1.1;
+margin:30px 0;
+
+}
+
+.hero span{
+
+color:#999;
+font-size:1.1rem;
+line-height:2;
+
+}
+
+.contact{
+
+padding:160px 8%;
+
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:40px;
+max-width:1200px;
+margin:auto;
+
+}
+
+.card{
+
+border:1px solid #222;
+padding:60px;
+transition:.35s ease;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+border-color:#B89D68;
+
+}
+
+.label{
+
+letter-spacing:8px;
+font-size:.8rem;
+color:#B89D68;
+margin-bottom:25px;
+
+}
+
+.card h2{
+
+font-size:2rem;
+font-weight:300;
+margin-bottom:20px;
+word-break:break-word;
+
+}
+
+.card span{
+
+color:#999;
+line-height:1.8;
+
+}
+
+.quote{
+
+padding:180px 8%;
+text-align:center;
+
+}
+
+blockquote{
+
+font-size:3rem;
+font-weight:300;
+max-width:900px;
+margin:auto;
+line-height:1.5;
+color:#ddd;
+
+}
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:3.5rem;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.card{
+
+padding:40px;
+
+}
+
+blockquote{
+
+font-size:2rem;
+
+}
+
+}
+
+</style>

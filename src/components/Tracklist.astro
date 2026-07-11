@@ -1,0 +1,127 @@
+---
+interface Props {
+  title: string;
+  tracks: string[];
+}
+
+const { title, tracks } = Astro.props;
+---
+
+<section class="tracklist">
+
+  <div class="heading">
+
+    <p>EXHIBITION AUDIO</p>
+
+    <h2>{title}</h2>
+
+  </div>
+
+  <div class="list">
+
+    {
+      tracks.map((track, index) => (
+
+        <div class="track">
+
+          <span class="number">
+            {(index + 1).toString().padStart(2, "0")}
+          </span>
+
+          <span class="line"></span>
+
+          <span class="name">
+            {track}
+          </span>
+
+        </div>
+
+      ))
+    }
+
+  </div>
+
+</section>
+
+<style>
+
+.tracklist{
+  padding:160px 8%;
+  max-width:1000px;
+  margin:auto;
+}
+
+.heading{
+  text-align:center;
+  margin-bottom:80px;
+}
+
+.heading p{
+  letter-spacing:8px;
+  color:#B89D68;
+  font-size:.85rem;
+}
+
+.heading h2{
+  font-size:4rem;
+  font-weight:300;
+  margin-top:20px;
+}
+
+.list{
+  border-top:1px solid #222;
+}
+
+.track{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:30px 0;
+  border-bottom:1px solid #222;
+}
+
+.number{
+  color:#666;
+  min-width:40px;
+}
+
+.line{
+  flex:1;
+  height:1px;
+  background:#222;
+}
+
+.name{
+  min-width:250px;
+  text-align:right;
+  letter-spacing:2px;
+}
+
+.track:hover{
+  padding-left:15px;
+  transition:.3s;
+}
+
+@media(max-width:900px){
+
+.heading h2{
+  font-size:2.8rem;
+}
+
+.track{
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+.line{
+  width:100%;
+}
+
+.name{
+  text-align:left;
+  min-width:auto;
+}
+
+}
+
+</style>

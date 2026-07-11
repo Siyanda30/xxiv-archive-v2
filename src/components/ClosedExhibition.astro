@@ -1,0 +1,138 @@
+---
+interface Props {
+  archive: string;
+  title: string;
+}
+
+const { archive, title } = Astro.props;
+---
+
+<section class="closed">
+
+  <div class="content">
+
+    <p class="archive">{archive}</p>
+
+    <h1>{title}</h1>
+
+    <div class="status">
+
+      <p class="label">
+        EXHIBITION STATUS
+      </p>
+
+      <div class="dot"></div>
+
+      <span>CLOSED</span>
+
+    </div>
+
+    <p class="message">
+
+      This exhibition has not yet opened to the public.
+
+      <br><br>
+
+      Please return when the archive announces its opening.
+
+    </p>
+
+  </div>
+
+</section>
+
+<style>
+
+.closed{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:8%;
+text-align:center;
+
+}
+
+.content{
+
+max-width:800px;
+
+}
+
+.archive{
+
+letter-spacing:10px;
+font-size:.8rem;
+color:#B89D68;
+
+}
+
+h1{
+
+font-size:6rem;
+font-weight:300;
+margin:30px 0 80px;
+
+}
+
+.status{
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+margin-bottom:40px;
+
+}
+
+.label{
+
+letter-spacing:6px;
+color:#888;
+
+}
+
+.dot{
+
+width:10px;
+height:10px;
+border-radius:50%;
+background:#777;
+
+}
+
+.status span{
+
+letter-spacing:4px;
+font-size:1rem;
+
+}
+
+.message{
+
+max-width:600px;
+margin:auto;
+line-height:2;
+color:#999;
+
+}
+
+@media(max-width:900px){
+
+h1{
+
+font-size:3.5rem;
+
+}
+
+.status{
+
+flex-direction:column;
+gap:10px;
+
+}
+
+}
+
+</style>

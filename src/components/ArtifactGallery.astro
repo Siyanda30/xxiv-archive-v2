@@ -1,0 +1,265 @@
+---
+interface Artifact {
+  id: string;
+  title: string;
+  image: string;
+  note: string;
+}
+
+interface Props {
+  folder: string;
+}
+
+const { folder } = Astro.props;
+
+const artifacts: Artifact[] = [
+  {
+    id: "ARTIFACT 001",
+    title: "",
+    image: "1.jpg",
+    note: "photograph.Sasasa Gambushe"
+  },
+  {
+    id: "ARTIFACT 002",
+    title: "",
+    image: "2.jpg",
+    note: "photograph.Sasasa Gambushe"
+  },
+  {
+    id: "ARTIFACT 003",
+    title: "",
+    image: "3.jpg",
+    note: "photograph.Sasasa Gambushe"
+  },
+  {
+    id: "ARTIFACT 004",
+    title: "",
+    image: "4.jpg",
+    note: "photograph.Sasasa Gambushe"
+  },
+  {
+    id: "ARTIFACT 005",
+    title: "",
+    image: "5.jpg",
+    note: "photograph.Sasasa Gambushe"
+  }
+];
+---
+
+<section class="archive-room">
+
+  <div class="intro fade">
+
+    <p>ARCHIVE ROOM</p>
+
+    <h2>Artifacts</h2>
+
+    <span>
+      Every photograph is preserved as part of the permanent collection.
+    </span>
+
+  </div>
+
+  {
+    artifacts.map((artifact) => (
+
+      <article class="artifact fade">
+
+        <div class="image">
+
+          <img
+            src={`/images/${folder}/${artifact.image}`}
+            alt={artifact.title}
+          />
+
+        </div>
+
+        <div class="information">
+
+          <p class="id">{artifact.id}</p>
+
+          <h3>{artifact.title}</h3>
+
+          <p class="note">
+            {artifact.note}
+          </p>
+
+        </div>
+
+      </article>
+
+    ))
+  }
+
+</section>
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{
+threshold:.15
+});
+
+document.querySelectorAll(".fade").forEach((el)=>{
+
+observer.observe(el);
+
+});
+
+</script>
+
+<style>
+
+.archive-room{
+
+max-width:1400px;
+margin:auto;
+padding:180px 8%;
+
+}
+
+.intro{
+
+text-align:center;
+margin-bottom:180px;
+
+}
+
+.intro p{
+
+letter-spacing:10px;
+font-size:.8rem;
+color:#B89D68;
+
+}
+
+.intro h2{
+
+font-size:5rem;
+font-weight:300;
+margin:25px 0;
+
+}
+
+.intro span{
+
+color:#888;
+
+}
+
+.artifact{
+
+margin-bottom:220px;
+
+}
+
+.image{
+
+overflow:hidden;
+border:1px solid #1f1f1f;
+background:#050505;
+
+}
+
+.image img{
+
+width:100%;
+display:block;
+transition:transform 1.2s ease;
+
+}
+
+.image:hover img{
+
+transform:scale(1.04);
+
+}
+
+.information{
+
+margin-top:50px;
+max-width:750px;
+
+}
+
+.id{
+
+letter-spacing:8px;
+font-size:.8rem;
+color:#B89D68;
+
+}
+
+.information h3{
+
+font-size:3rem;
+font-weight:300;
+margin:18px 0;
+
+}
+
+.note{
+
+line-height:2;
+font-size:1.15rem;
+color:#999;
+
+}
+
+/* ANIMATION */
+
+.fade{
+
+opacity:0;
+transform:translateY(80px);
+transition:1.2s ease;
+
+}
+
+.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+@media(max-width:900px){
+
+.archive-room{
+
+padding:120px 8%;
+
+}
+
+.intro h2{
+
+font-size:3rem;
+
+}
+
+.information h3{
+
+font-size:2rem;
+
+}
+
+.artifact{
+
+margin-bottom:140px;
+
+}
+
+}
+
+</style>

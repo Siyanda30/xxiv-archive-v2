@@ -1,0 +1,141 @@
+---
+interface Props {
+  issue: string;
+  status?: string;
+  pdf?: string;
+}
+
+const {
+  issue,
+  status = "COMING SOON",
+  pdf = "#"
+} = Astro.props;
+---
+
+<section class="magazine">
+
+  <div class="heading">
+
+    <p>XXIV ARCHIVE CATALOGUE</p>
+
+    <h2>Issue {issue}</h2>
+
+  </div>
+
+  <div class="content">
+
+    <p>
+
+      Every exhibition within XXIV ARCHIVE is accompanied by a catalogue
+      documenting the story behind the music, photography, production,
+      creative direction and archive material.
+
+    </p>
+
+    {
+      status === "AVAILABLE" ? (
+
+        <div class="buttons">
+
+          <a href={pdf} target="_blank">
+            READ ONLINE
+          </a>
+
+          <a href={pdf} download>
+            DOWNLOAD PDF
+          </a>
+
+        </div>
+
+      ) : (
+
+        <div class="coming">
+
+          AVAILABLE SOON
+
+        </div>
+
+      )
+    }
+
+  </div>
+
+</section>
+
+<style>
+
+.magazine{
+
+padding:180px 8%;
+max-width:900px;
+margin:auto;
+text-align:center;
+
+}
+
+.heading p{
+
+letter-spacing:8px;
+font-size:.8rem;
+color:#B89D68;
+
+}
+
+.heading h2{
+
+font-size:4rem;
+font-weight:300;
+margin:25px 0 60px;
+
+}
+
+.content p{
+
+line-height:2;
+color:#999;
+font-size:1.15rem;
+max-width:700px;
+margin:auto;
+
+}
+
+.buttons{
+
+margin-top:60px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+.buttons a{
+
+padding:18px 40px;
+border:1px solid #333;
+text-decoration:none;
+color:white;
+letter-spacing:4px;
+transition:.3s;
+
+}
+
+.buttons a:hover{
+
+background:#B89D68;
+color:black;
+
+}
+
+.coming{
+
+margin-top:60px;
+display:inline-block;
+padding:18px 40px;
+border:1px solid #333;
+letter-spacing:6px;
+color:#888;
+
+}
+
+</style>

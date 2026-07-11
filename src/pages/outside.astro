@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Exhibition from "../components/Exhibition.astro";
+import ArtifactGallery from "../components/ArtifactGallery.astro";
+import Magazine from "../components/Magazine.astro";
+import Tracklist from "../components/Tracklist.astro";
+import FinalRoom from "../components/FinalRoom.astro";
+import ExhibitionNavigation from "../components/ExhibitionNavigation.astro";
+---
+
+<BaseLayout title="Outside | XXIV ARCHIVE">
+
+<Exhibition
+
+archive="ARCHIVE 004"
+
+title="Outside"
+
+year="2026"
+
+cover="/images/OUTSIDE/cover.jpg"
+
+heading="Outside"
+
+description="Write your artist statement for Outside here."
+
+>
+
+<ArtifactGallery folder="OUTSIDE" />
+
+<Magazine
+
+issue="004"
+
+status="AVAILABLE"
+
+pdf="/magazines/OUTSIDE/magazine.pdf"
+
+/>
+
+<Tracklist
+
+title="Outside"
+
+tracks={[
+
+"Outside"
+
+]}
+
+/>
+
+<FinalRoom
+
+mode="upcoming"
+
+date="17 September 2026"
+
+/>
+
+<ExhibitionNavigation
+
+previousTitle="Better Version"
+previousArchive="ARCHIVE 003"
+previousLink="/better-version"
+
+nextTitle="Whatever I Want"
+nextArchive="ARCHIVE 005"
+nextLink="/whatever-i-want"
+
+/>
+
+</Exhibition>
+
+</BaseLayout>

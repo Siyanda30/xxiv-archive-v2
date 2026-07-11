@@ -1,0 +1,157 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About | XXIV ARCHIVE">
+
+<section class="hero">
+
+    <p>THE ARCHIVE</p>
+
+    <h1>
+        More than music.<br>
+        A living museum.
+    </h1>
+
+</section>
+
+<section class="story">
+
+<div class="container">
+
+<h2>Our Philosophy</h2>
+
+<p>
+
+XXIV ARCHIVE exists to preserve moments rather than simply release music.
+
+Every song becomes an exhibition.
+
+Every exhibition is accompanied by photography, written reflections and visual documentation.
+
+Rather than disappearing into a catalogue of releases, every project remains part of a growing permanent collection.
+
+The archive grows with every chapter.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="artist">
+
+<div class="container">
+
+<h2>The Artist</h2>
+
+<p>
+
+I don't see music as isolated songs.
+
+Every project represents a period of my life.
+
+The sounds, photographs and publications preserve those moments exactly as they were experienced.
+
+XXIV ARCHIVE is where those moments remain accessible long after the music is released.
+
+</p>
+
+</div>
+
+</section>
+
+</BaseLayout>
+
+<style>
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+.hero p{
+
+letter-spacing:8px;
+
+color:#B89D68;
+
+}
+
+.hero h1{
+
+font-size:6rem;
+
+font-weight:300;
+
+line-height:1.2;
+
+max-width:1000px;
+
+}
+
+.story,
+.artist{
+
+padding:180px 8%;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.container{
+
+max-width:900px;
+
+}
+
+.container h2{
+
+font-size:3rem;
+
+font-weight:300;
+
+margin-bottom:40px;
+
+}
+
+.container p{
+
+font-size:1.2rem;
+
+line-height:2.1;
+
+color:#aaa;
+
+}
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:3.5rem;
+
+}
+
+.container h2{
+
+font-size:2.2rem;
+
+}
+
+}
+
+</style>

@@ -1,0 +1,271 @@
+---
+interface Props {
+  archive: string;
+  title: string;
+  year: string;
+  cover: string;
+  heading: string;
+  description: string;
+}
+
+const {
+  archive,
+  title,
+  year,
+  cover,
+  heading,
+  description
+} = Astro.props;
+---
+
+<section class="hero">
+
+  <img class="background" src={cover} alt={title} />
+
+  <div class="overlay">
+
+    <p class="archive">{archive}</p>
+
+    <h1>{title}</h1>
+
+    <span>{year}</span>
+
+    <div class="scroll">
+
+      <span></span>
+
+      <p>SCROLL TO ENTER</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="statement">
+
+  <div class="container">
+
+    <small>ARTIST STATEMENT</small>
+
+    <h2>{heading}</h2>
+
+    <p>{description}</p>
+
+  </div>
+
+</section>
+
+<slot />
+
+<style>
+
+.hero{
+
+position:relative;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+
+}
+
+.background{
+
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+
+animation:zoom 18s ease-in-out infinite alternate;
+
+filter:brightness(.28);
+
+}
+
+.overlay{
+
+position:relative;
+z-index:2;
+text-align:center;
+
+animation:fadeUp 1.4s ease;
+
+}
+
+.archive{
+
+letter-spacing:10px;
+color:#B89D68;
+font-size:.8rem;
+
+}
+
+h1{
+
+font-size:8rem;
+font-weight:300;
+letter-spacing:6px;
+margin:25px 0;
+
+}
+
+.overlay span{
+
+letter-spacing:6px;
+color:#aaa;
+
+}
+
+.scroll{
+
+margin-top:90px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+.scroll span{
+
+width:1px;
+height:70px;
+background:#666;
+
+animation:scrollLine 2s ease-in-out infinite;
+
+}
+
+.scroll p{
+
+margin-top:20px;
+letter-spacing:5px;
+font-size:.75rem;
+color:#888;
+
+}
+
+.statement{
+
+padding:180px 8%;
+display:flex;
+justify-content:center;
+
+}
+
+.container{
+
+max-width:900px;
+
+}
+
+.container small{
+
+letter-spacing:8px;
+color:#B89D68;
+
+}
+
+.container h2{
+
+font-size:3.8rem;
+font-weight:300;
+margin:30px 0;
+
+}
+
+.container p{
+
+font-size:1.2rem;
+line-height:2.1;
+color:#bbb;
+
+}
+
+@keyframes zoom{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.08);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes scrollLine{
+
+0%{
+
+transform:scaleY(.3);
+opacity:.4;
+
+}
+
+50%{
+
+transform:scaleY(1);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scaleY(.3);
+
+opacity:.4;
+
+}
+
+}
+
+@media(max-width:900px){
+
+h1{
+
+font-size:4rem;
+
+}
+
+.container h2{
+
+font-size:2.5rem;
+
+}
+
+.statement{
+
+padding:120px 8%;
+
+}
+
+}
+
+</style>

@@ -1,0 +1,144 @@
+<nav class="nav">
+
+  <a href="/" class="logo">
+    XXIV ARCHIVE
+  </a>
+
+  <div class="links">
+
+    <a href="/#collection">COLLECTION</a>
+
+    <a href="/archive">THE ARCHIVE</a>
+
+    <a href="/visit">VISIT</a>
+
+  </div>
+
+</nav>
+
+<style>
+
+.nav{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:32px 8%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+z-index:1000;
+
+background:rgba(0,0,0,.35);
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+transition:.4s;
+
+}
+
+.logo{
+
+font-family:"Cormorant Garamond",serif;
+font-size:1.6rem;
+font-weight:300;
+letter-spacing:6px;
+
+color:white;
+text-decoration:none;
+
+}
+
+.links{
+
+display:flex;
+gap:50px;
+
+}
+
+.links a{
+
+position:relative;
+
+font-size:.82rem;
+
+letter-spacing:5px;
+
+text-transform:uppercase;
+
+color:#d0d0d0;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-8px;
+
+width:0;
+
+height:1px;
+
+background:#B89D68;
+
+transition:.35s;
+
+}
+
+.links a:hover{
+
+color:white;
+
+}
+
+.links a:hover::after{
+
+width:100%;
+
+}
+
+@media(max-width:768px){
+
+.nav{
+
+padding:24px 6%;
+
+}
+
+.logo{
+
+font-size:1.2rem;
+letter-spacing:4px;
+
+}
+
+.links{
+
+gap:20px;
+flex-wrap:wrap;
+justify-content:flex-end;
+
+}
+
+.links a{
+
+font-size:.72rem;
+letter-spacing:3px;
+
+}
+
+}
+
+</style>

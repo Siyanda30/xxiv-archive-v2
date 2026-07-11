@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Exhibition from "../components/Exhibition.astro";
+import ArtifactGallery from "../components/ArtifactGallery.astro";
+import Magazine from "../components/Magazine.astro";
+import Tracklist from "../components/Tracklist.astro";
+import FinalRoom from "../components/FinalRoom.astro";
+import ExhibitionNavigation from "../components/ExhibitionNavigation.astro";
+---
+
+<BaseLayout title="Whatever I Want | XXIV ARCHIVE">
+
+<Exhibition
+
+archive="ARCHIVE 005"
+
+title="Whatever I Want"
+
+year="2026"
+
+cover="/images/WHATEVER I WANT/cover.jpg"
+
+heading="Whatever I Want"
+
+description="Write your artist statement for Whatever I Want here."
+
+>
+
+<ArtifactGallery folder="WHATEVER I WANT" />
+
+<Magazine
+
+issue="005"
+
+status="AVAILABLE"
+
+pdf="/magazines/WHATEVER I WANT/magazine.pdf"
+
+/>
+
+<Tracklist
+
+title="Whatever I Want"
+
+tracks={[
+
+"Whatever I Want"
+
+]}
+
+/>
+
+<FinalRoom
+
+mode="upcoming"
+
+date="1 October 2026"
+
+/>
+
+<ExhibitionNavigation
+
+previousTitle="Outside"
+previousArchive="ARCHIVE 004"
+previousLink="/outside"
+
+nextTitle="Play That Shxt Again"
+nextArchive="ARCHIVE 006"
+nextLink="/play-that-shxt-again"
+
+/>
+
+</Exhibition>
+
+</BaseLayout>

@@ -1,0 +1,130 @@
+---
+import { entries } from "../data/entries";
+---
+
+<section id="collection" class="archive">
+
+  <div class="heading">
+
+    <p>CURRENT COLLECTION</p>
+
+    <h2>The Archive</h2>
+
+  </div>
+
+  <div class="grid">
+
+    {
+      entries.map((entry) => (
+
+        <article class="card">
+
+          <img
+            src={entry.cover}
+            alt={entry.title}
+          />
+
+          <div class="content">
+
+            <span>{entry.archive}</span>
+
+            <h3>{entry.title}</h3>
+
+            <p>{entry.description}</p>
+
+            <a href={`/${entry.slug}`}>
+              ENTER →
+            </a>
+
+          </div>
+
+        </article>
+
+      ))
+    }
+
+  </div>
+
+</section>
+
+<style>
+
+.archive{
+padding:120px 8%;
+}
+
+.heading{
+text-align:center;
+margin-bottom:80px;
+}
+
+.heading p{
+letter-spacing:8px;
+font-size:.8rem;
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.heading h2{
+font-size:4rem;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+
+.card{
+background:#0d0d0d;
+border:1px solid var(--border);
+transition:.35s;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:var(--gold);
+}
+
+.card img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+}
+
+.content{
+padding:30px;
+}
+
+.content span{
+letter-spacing:4px;
+font-size:.75rem;
+color:var(--gold);
+}
+
+.content h3{
+font-size:2.4rem;
+margin:18px 0;
+}
+
+.content p{
+color:var(--muted);
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.content a{
+letter-spacing:4px;
+font-size:.85rem;
+}
+
+@media(max-width:768px){
+
+.heading h2{
+font-size:2.8rem;
+}
+
+}
+
+</style>

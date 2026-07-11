@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Exhibition from "../components/Exhibition.astro";
+import ArtifactGallery from "../components/ArtifactGallery.astro";
+import Magazine from "../components/Magazine.astro";
+import Tracklist from "../components/Tracklist.astro";
+import Listen from "../components/Listen.astro";
+import NextExhibition from "../components/NextExhibition.astro";
+---
+
+<BaseLayout title="Clouds | XXIV ARCHIVE">
+
+<Exhibition
+
+archive="ARCHIVE 002"
+
+title="Clouds"
+
+year="2024"
+
+cover="/images/CLOUDS/cover.jpg"
+
+heading="Experimentation"
+
+description="Clouds documents a period of experimentation and discovery. Every artifact represents a moment that helped shape my artistic identity."
+
+>
+
+<ArtifactGallery folder="CLOUDS" />
+
+<Magazine
+
+issue="002"
+
+status="AVAILABLE"
+
+pdf="/magazines/CLOUDS/magazine.pdf"
+
+/>
+
+<Tracklist
+
+title="CLOUDS"
+
+tracks={[
+
+"Converssation(intro)",
+"RuN iT Back",
+"WAR",
+"No More",
+"Sathi shwi"
+]}
+
+/>
+
+<Listen
+
+spotify="https://open.spotify.com/album/00ezFz9DvXOLuyqpTZp2EN?si=mHEmA9pvSjKekVRtsHjesw"
+
+apple="https://music.apple.com/za/album/clouds-ep/1782090493"
+
+youtube="#"
+
+/>
+
+<NextExhibition
+
+previousTitle="17:17"
+previousLink="/17-17"
+
+nextTitle="Better Version"
+nextLink="/better-version"
+
+/>
+
+</Exhibition>
+
+</BaseLayout>

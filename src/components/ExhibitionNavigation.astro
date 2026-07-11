@@ -1,0 +1,150 @@
+---
+interface Props {
+  previousTitle?: string;
+  previousArchive?: string;
+  previousLink?: string;
+
+  nextTitle?: string;
+  nextArchive?: string;
+  nextLink?: string;
+}
+
+const {
+  previousTitle,
+  previousArchive,
+  previousLink,
+  nextTitle,
+  nextArchive,
+  nextLink
+} = Astro.props;
+---
+
+<section class="exhibition-navigation">
+
+  {previousTitle ? (
+
+    <a href={previousLink} class="card">
+
+      <p class="direction">← PREVIOUS EXHIBITION</p>
+
+      <span>{previousArchive}</span>
+
+      <h3>{previousTitle}</h3>
+
+    </a>
+
+  ) : <div></div>}
+
+  {nextTitle ? (
+
+    <a href={nextLink} class="card right">
+
+      <p class="direction">NEXT EXHIBITION →</p>
+
+      <span>{nextArchive}</span>
+
+      <h3>{nextTitle}</h3>
+
+    </a>
+
+  ) : <div></div>}
+
+</section>
+
+<style>
+
+.exhibition-navigation{
+
+padding:160px 8%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:40px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.card{
+
+display:block;
+
+padding:45px;
+
+background:#0d0d0d;
+
+border:1px solid rgba(255,255,255,.08);
+
+text-decoration:none;
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+border-color:#B89D68;
+
+transform:translateY(-8px);
+
+}
+
+.right{
+
+text-align:right;
+
+}
+
+.direction{
+
+font-size:.75rem;
+
+letter-spacing:4px;
+
+color:#777;
+
+margin-bottom:20px;
+
+}
+
+.card span{
+
+display:block;
+
+letter-spacing:4px;
+
+color:#B89D68;
+
+margin-bottom:12px;
+
+}
+
+.card h3{
+
+font-size:2rem;
+
+font-weight:300;
+
+margin:0;
+
+}
+
+@media(max-width:900px){
+
+.exhibition-navigation{
+
+grid-template-columns:1fr;
+
+}
+
+.right{
+
+text-align:left;
+
+}
+
+}
+
+</style>

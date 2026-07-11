@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Exhibition from "../components/Exhibition.astro";
+import ArtifactGallery from "../components/ArtifactGallery.astro";
+import Magazine from "../components/Magazine.astro";
+import Tracklist from "../components/Tracklist.astro";
+import Listen from "../components/Listen.astro";
+import NextExhibition from "../components/NextExhibition.astro";
+---
+
+<BaseLayout title="17:17 | XXIV ARCHIVE">
+
+<Exhibition
+
+archive="ARCHIVE 001"
+
+title="17:17"
+
+year="2024"
+
+cover="/images/17-17/cover.jpg"
+
+heading="The Beginning"
+
+description="17:17 is the foundation of XXIV ARCHIVE. It documents a period of searching for identity, purpose and meaning."
+
+>
+
+<ArtifactGallery folder="17-17" />
+
+<Magazine
+
+issue="001"
+
+status="AVAILABLE"
+
+pdf="/magazines/17-17/magazine.pdf"
+
+/>
+
+<Tracklist
+
+title="17:17"
+
+tracks={[
+
+"Ether",
+"Find My Way",
+"Next 2 Me",
+"Roll it Up",
+"Shine"
+
+]}
+
+/>
+
+<Listen
+
+spotify="https://open.spotify.com/album/351UcYemx684zBP8be3P0M?si=DiiYapkOQtupyC4mvDUhKg"
+
+apple="https://music.apple.com/za/album/17-17-ep/1734185756"
+
+youtube="#"
+
+/>
+
+<NextExhibition
+
+nextTitle="Clouds"
+
+nextLink="/clouds"
+
+/>
+
+</Exhibition>
+
+</BaseLayout>

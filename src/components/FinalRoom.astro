@@ -1,0 +1,189 @@
+---
+interface Props {
+  mode: "released" | "upcoming";
+
+  date?: string;
+
+  spotify?: string;
+  apple?: string;
+  youtube?: string;
+}
+
+const {
+  mode,
+  date,
+  spotify,
+  apple,
+  youtube
+} = Astro.props;
+---
+
+<section class="final-room">
+
+  <p class="archive">FINAL ROOM</p>
+
+  {
+    mode === "upcoming" ? (
+
+      <>
+
+        <h2>Opening Date</h2>
+
+        <div class="date">
+          {date}
+        </div>
+
+        <p class="description">
+
+          The exhibition is now open.
+
+          <br /><br />
+
+          The recording becomes publicly available on the date above.
+
+          <br /><br />
+
+          Please return when the exhibition officially opens.
+
+        </p>
+
+      </>
+
+    ) : (
+
+      <>
+
+        <h2>Listen to the Exhibition</h2>
+
+        <div class="links">
+
+          <a href={spotify}>Spotify</a>
+
+          <a href={apple}>Apple Music</a>
+
+          <a href={youtube}>YouTube Music</a>
+
+        </div>
+
+      </>
+
+    )
+  }
+
+</section>
+
+<style>
+
+.final-room{
+
+padding:180px 8%;
+
+text-align:center;
+
+border-top:1px solid #222;
+
+}
+
+.archive{
+
+letter-spacing:8px;
+
+font-size:.8rem;
+
+color:#B89D68;
+
+margin-bottom:20px;
+
+}
+
+.final-room h2{
+
+font-size:4rem;
+
+font-weight:300;
+
+margin-bottom:50px;
+
+}
+
+.date{
+
+font-size:2.2rem;
+
+letter-spacing:4px;
+
+margin-bottom:40px;
+
+}
+
+.description{
+
+max-width:700px;
+
+margin:auto;
+
+line-height:2;
+
+color:#999;
+
+}
+
+.links{
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+margin-top:60px;
+
+}
+
+.links a{
+
+padding:16px 34px;
+
+border:1px solid #444;
+
+letter-spacing:3px;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.links a:hover{
+
+border-color:#B89D68;
+
+color:#B89D68;
+
+}
+
+@media(max-width:900px){
+
+.final-room{
+
+padding:120px 8%;
+
+}
+
+.final-room h2{
+
+font-size:2.6rem;
+
+}
+
+.date{
+
+font-size:1.6rem;
+
+}
+
+}
+
+</style>

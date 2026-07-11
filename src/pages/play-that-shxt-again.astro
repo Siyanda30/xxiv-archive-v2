@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Exhibition from "../components/Exhibition.astro";
+import ArtifactGallery from "../components/ArtifactGallery.astro";
+import Magazine from "../components/Magazine.astro";
+import Tracklist from "../components/Tracklist.astro";
+import FinalRoom from "../components/FinalRoom.astro";
+import ExhibitionNavigation from "../components/ExhibitionNavigation.astro";
+---
+
+<BaseLayout title="Play That Shxt Again | XXIV ARCHIVE">
+
+<Exhibition
+
+archive="ARCHIVE 006"
+
+title="Play That Shxt Again"
+
+year="2026"
+
+cover="/images/PLAY THAT SHXT AGAIN/cover.jpg"
+
+heading="Play That Shxt Again"
+
+description="Write your artist statement for Play That Shxt Again here."
+
+>
+
+<ArtifactGallery folder="PLAY THAT SHXT AGAIN" />
+
+<Magazine
+
+issue="006"
+
+status="AVAILABLE"
+
+pdf="/magazines/PLAY THAT SHXT AGAIN/magazine.pdf"
+
+/>
+
+<Tracklist
+
+title="Play That Shxt Again"
+
+tracks={[
+
+"Play That Shxt Again"
+
+]}
+
+/>
+
+<FinalRoom
+
+mode="upcoming"
+
+date="28 August 2026"
+
+/>
+
+<ExhibitionNavigation
+
+previousTitle="Whatever I Want"
+previousArchive="ARCHIVE 005"
+previousLink="/whatever-i-want"
+
+/>
+
+</Exhibition>
+
+</BaseLayout>
