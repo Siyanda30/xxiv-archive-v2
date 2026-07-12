@@ -48,7 +48,7 @@ export const entries = [
     status: "OPEN",
     cover: "/images/OUTSIDE/cover.jpg",
     description:
-      "The exhibition is now open. The recording becomes publicly available on 17 September 2026."
+      "The exhibition is now open. The recording becomes publicly available on 31 JULY 2026."
   },
 
   {
@@ -61,7 +61,7 @@ export const entries = [
     status: "OPEN",
     cover: "/images/WHATEVER I WANT/cover.jpg",
     description:
-      "The exhibition is now open. The recording becomes publicly available on 1 October 2026."
+      "The exhibition is now Closed. The recording becomes publicly available on 7 August 2026."
   },
 
   {
@@ -74,6 +74,6 @@ export const entries = [
     status: "OPEN",
     cover: "/images/PLAY THAT SHXT AGAIN/cover.jpg",
     description:
-      "The exhibition is now open. The recording becomes publicly available on 15 October 2026."
+      "The exhibition is now closed. The recording becomes publicly available on 21 August 2026."
   }
 ];
